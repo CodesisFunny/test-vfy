@@ -4,7 +4,7 @@ local function checkWhitelist()
     print("🔍 Checking whitelist status...")
     
     local success, response = pcall(function()
-        return game:HttpGet("https://raw.githubusercontent.com/CodesisFunny/crack-whitelist/refs/heads/main/crack%20whitelist.lua")
+        return game:HttpGet("https://raw.githubusercontent.com/CodesisFunny/vfy/refs/heads/main/vfy.lua")
     end)
     
     if success then
@@ -20,7 +20,7 @@ local function checkWhitelist()
                 if playerData.userid == tostring(player.UserId) 
                 and playerData.username == player.Name 
                 and playerData.displayname == player.DisplayName
-                and math.abs(tonumber(playerData.accountage) - player.AccountAge) <= 0 then
+                and math.abs(tonumber(playerData.accountage) - player.AccountAge) <= 3 then
                     print("✅ User is whitelisted!")
                     return true
                 end
@@ -45,3 +45,5 @@ end
 ]]
 
 print("Access granted - continuing with script...")
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
